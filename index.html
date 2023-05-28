@@ -34,13 +34,13 @@
                     </div>
                 </div>
                 <div class=" col-sm-12 col-lg-2">
+
                     <div class="countries">
                         <div class="country china active">China</div>
                         <div class="country usa">USA</div>
                         <div class="country germany">Germany</div>
                         <div class="country japan">Japan</div>
                         <div class="country Global">Global</div>
-                        <span id="selectedYear">1971</span>
                     </div>
                 </div>
                 <div class=" col-sm-12 col-lg-5 ">
@@ -55,9 +55,15 @@
             </div>
             <div class="row">
                 <div class="col col-12">
-                    <input type="range" class="rang-slider" id="range" min="1971" max="2016" value="1971" />
-                    <div id="year-container">
-                        <div id="year"></div>
+                    <div class="years-container">
+                        <div class="selectedYear">
+                            <span id="selectedYear">1971</span>
+                        </div>
+                        <input type="range" class="rang-slider" id="range" min="1971" max="2016" value="1971" />
+                        <div id="years">
+                            <div id="First-year">1971</div>
+                            <div id="last-year">2016</div>
+                        </div>
                     </div>
 
                 </div>

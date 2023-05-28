@@ -23,13 +23,13 @@ a {
 }
 
 h1 {
-  font-size: 80px;
+  font-size: 50px;
   font-weight: 800;
   line-height: 90px;
 }
 
 h2 {
-  font-size: 50px;
+  font-size: 30px;
   font-weight: 700;
   line-height: 60px;
 }
@@ -66,6 +66,9 @@ p {
   width: 300px;
   height: 300px;
   position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   /*
   &::after {
     content: $show-percentage;
@@ -118,9 +121,17 @@ p {
 .main .countries .active {
   color: #000000;
 }
+.main .selectedYear {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .selectedYear #selectedYear {
+  font-weight: bold;
+}
 .main .rang-slider[type=range] {
   width: 100%;
-  margin-top: 50px;
+  margin-top: 10px;
   -webkit-appearance: none;
 }
 .main .rang-slider[type=range]::-webkit-slider-runnable-track {
@@ -138,10 +149,10 @@ p {
   border-radius: 100%;
   transform: translateY(-5px);
 }
-.main #year-container {
+.main #years {
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
+  margin-top: 7px;
 }
 .main .year {
   font-size: 12px;
