@@ -142,7 +142,7 @@ const createChart = () => {
     const ctx = document.getElementById("myChart");
     destroyChart();
 
-    const type = "bar"; //doughnut, pie,polarArea, line, bar, bubble
+    const type = "polarArea"; //doughnut, pie, polarArea, line, bar, bubble
     const data = {
         labels: ["energieWirtschaft", "verbrennend", "andereIndustrielleVerbrennung", "transport", "building"],
         datasets: [
