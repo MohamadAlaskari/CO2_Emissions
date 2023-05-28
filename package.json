@@ -1,0 +1,26 @@
+{
+  "name": "co2_emissions",
+  "version": "1.0.0",
+  "description": "Diese Anwendung ist ein interaktives Tool zur Visualisierung und Analyse von CO2-Emissionen weltweit. Sie ermöglicht es Benutzern, verschiedene Länder auszuwählen und den Anteil der CO2-Emissionen für ausgewählte Jahre zu erkunden. Zusätzlich bietet die Anwendung Diagramme und Grafiken, um den Einfluss verschiedener Sektoren wie Energiewirtschaft, Verbrennung, Industrie, Transport und Gebäude auf die Gesamtemissionen darzustellen. Erhalten Sie einen umfassenden Einblick in die globale CO2-Problematik und unterstützen Sie nachhaltige Entscheidungsprozesse.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MohamadAlaskari/CO2_Emissions.git"
+  },
+  "keywords": [
+    "CO2-Emissionen",
+    "Klimawandel",
+    "Umwelt",
+    "Datenanalyse",
+    "Statistik"
+  ],
+  "author": "Mohamad Alaskari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MohamadAlaskari/CO2_Emissions/issues"
+  },
+  "homepage": "https://github.com/MohamadAlaskari/CO2_Emissions#readme"
+}
