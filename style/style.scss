@@ -144,7 +144,11 @@ p {
       color: $color-active;
     }
   }
-
+.chart-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .selectedYear{
   display: flex;
   justify-content: center;

@@ -121,6 +121,11 @@ p {
 .main .countries .active {
   color: #000000;
 }
+.main .chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .main .selectedYear {
   display: flex;
   justify-content: center;
