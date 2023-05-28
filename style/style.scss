@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+$color-background: #5ac9ab;
+$color-font-primary: #000000;
+$color-font-secondary: #ffffff36;
+
+$color-showPercentage: #ffffff;
+$color-range-thump: #5828aa;
+$color-range-track: #5e00ec;
+$circle-fill-background: rgba(53, 2, 9, 0.733);
+$color-pulse: $circle-fill-background;
+$show-percentage: "0%";
+$font-family: "Lexend", sans-serif;
+$color-active: #000000;
+:root {
+  /* Variablen */
+  /* Colors */
+  /* Colors */
+  --show-percentage: "0%";
+}
+
+body {
+  background: $color-background;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+  font-family: "Lexend", sans-serif;
+  color: $color-font-primary;
+}
+
+h1 {
+  font-size: 80px;
+  font-weight: 800;
+  line-height: 90px;
+}
+
+h2 {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 60px;
+}
+
+h3 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 50px;
+}
+
+h4 {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 40px;
+  font-family: "Lexend", sans-serif;
+}
+
+p {
+  font-family: "Lexend", sans-serif;
+  color: #848b9f;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.main {
+  header {
+    height: 60px;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .earth_container {
+    width: 300px;
+    height: 300px;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      border: 4px solid #000;
+      border-radius: 100%;
+      z-index: -1;
+      background-image: linear-gradient(
+        0deg,
+        $circle-fill-background var(--circle-fill),
+        transparent var(--circle-fill)
+      );
+      box-shadow: 0 0 0 $color-pulse;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    /*
+    &::after {
+      content: $show-percentage;
+      position: absolute;
+      bottom: 15%;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      color: $color-showPercentage;
+      font-weight: 700;
+      font-size: 2.2rem;
+    }
+    */
+  }
+
+  #myChart {
+    width: 250px;
+    height: 250px;
+  }
+
+  #show {
+    margin: 0;
+    transform: translateY(-70px);
+    color: $color-showPercentage;
+    text-align: center;
+    font-size: 32px;
+  }
+  .countries {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    .country {
+      color: #fff;
+      cursor: pointer;
+      font-size: large;
+      font-weight: bolder;
+    }
+    .active {
+      color: $color-active;
+    }
+  }
+  .rang-slider[type="range"] {
+    width: 100%;
+    margin-top: 50px;
+    -webkit-appearance: none;
+
+    &::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 5px;
+      border-radius: 100px;
+      background-color: $color-range-track;
+      cursor: pointer;
+    }
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 15px;
+      height: 15px;
+      background-color: $color-range-thump;
+      border-radius: 100%;
+      transform: translateY(-5px);
+    }
+  }
+
+  #year-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .year {
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .burger__smoke {
+    position: absolute;
+    width: 100%;
+    padding-top: 100%;
+    left: 0;
+    bottom: 1%;
+    mask: url(#smoke);
+    -webkit-mask-box-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/386739/smoke-mask.png);
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/386739/smoke.png);
+    background-size: 100% auto;
+    animation: bgpos 8s linear infinite forwards;
+    opacity: 1;
+    transform-origin: bottom center;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 $color-pulse;
+  }
+
+  70% {
+    box-shadow: 0 0 0 50px rgba(255, 0, 0, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+  }
+}
+
+@keyframes bgpos {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 0 340%;
+  }
+}
