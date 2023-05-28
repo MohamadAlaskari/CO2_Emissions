@@ -11,7 +11,7 @@ let selectedYear = 1971; // Startwert (Default Wert: Jahr)
 
 // Daten
 let year = null;
-let anteil_DerWeltCO2_Emissionen = "0.89%";
+let anteil_DerWeltCO2_Emissionen = "0.89";
 let energieWirtschaft = null;
 let verbrennend = null;
 let andereIndustrielleVerbrennung = null;
@@ -63,7 +63,7 @@ const update_SelectedYear = () => {
  */
 const fillEarth = () => {
     root.style.setProperty("--circle-fill", anteil_DerWeltCO2_Emissionen + "%");
-    show.innerHTML = anteil_DerWeltCO2_Emissionen;
+    show.innerHTML = anteil_DerWeltCO2_Emissionen + "%";
 };
 
 const fetchData = async (selectedCountry, selectedYear) => {
