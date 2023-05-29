@@ -5,13 +5,13 @@ $color-font-primary: #000000;
 $color-font-secondary: #ffffff36;
 
 $color-showPercentage: #ffffff;
-$color-range-thump: #5828aa;
-$color-range-track: #5e00ec;
+$color-range-thump: #045953;
+$color-range-track: #148c7c;
 $circle-fill-background: rgba(53, 2, 9, 0.733);
 $color-pulse: $circle-fill-background;
 $show-percentage: "0%";
 $font-family: "Lexend", sans-serif;
-$color-active: #000000;
+$color-active: #02332c;
 :root {
   /* Variablen */
   /* Colors */
@@ -142,21 +142,28 @@ p {
     }
     .active {
       color: $color-active;
+      font-size: 20px;
+      transition: font-size 0.2s ease-in;
     }
   }
-.chart-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.selectedYear{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  #selectedYear{
-font-weight: bold;
+  .chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-}
+  .selectedYear {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    #selectedYear {
+      position: absolute;
+      bottom: -8px;
+      font-weight: bold;
+      font-size: 430px;
+      z-index: -100;
+      opacity: 0.5;
+    }
+  }
   .rang-slider[type="range"] {
     width: 100%;
     margin-top: 10px;
@@ -179,15 +186,18 @@ font-weight: bold;
     }
   }
 
-  #years {
+  .years {
     display: flex;
     justify-content: space-between;
     margin-top: 7px;
-  }
-
-  .year {
-    font-size: 12px;
-    text-align: center;
+    width: 103%;
+    transform: translateX(-12px);
+    .year {
+      font-size: 12px;
+      text-align: center;
+      font-weight: bolder;
+      font-variant: small-caps;
+    }
   }
 
   .burger__smoke {
