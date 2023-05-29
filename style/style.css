@@ -90,8 +90,8 @@ p {
   border: 4px solid #000;
   border-radius: 100%;
   z-index: -1;
-  background-image: linear-gradient(0deg, rgba(53, 2, 9, 0.733) var(--circle-fill), transparent var(--circle-fill));
-  box-shadow: 0 0 0 rgba(53, 2, 9, 0.733);
+  background-image: linear-gradient(0deg, rgba(132, 21, 21, 0.733) var(--circle-fill), transparent var(--circle-fill));
+  box-shadow: 0 0 0 rgba(132, 21, 21, 0.733);
   animation: pulse 2s ease-in-out infinite;
 }
 .main #myChart {
@@ -101,7 +101,7 @@ p {
 .main #show {
   margin: 0;
   transform: translateY(-70px);
-  color: #ffffff;
+  color: rgb(84, 10, 48);
   text-align: center;
   font-size: 32px;
 }
@@ -192,7 +192,7 @@ p {
 
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 0 0 rgba(53, 2, 9, 0.733);
+    box-shadow: 0 0 0 0 rgba(132, 21, 21, 0.733);
   }
   70% {
     box-shadow: 0 0 0 50px rgba(255, 0, 0, 0);
