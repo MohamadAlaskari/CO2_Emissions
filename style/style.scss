@@ -1,16 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-$color-background: #5ac9ab;
+$color-background: rgb(90, 201, 171);
 $color-font-primary: #000000;
 $color-font-secondary: #ffffff36;
-$color-showPercentage: rgb(84, 10, 48);
+$color-showPercentage: rgb(142, 233, 219);
 $color-range-thump: #045953;
-$color-range-track: #148c7c;
-$circle-fill-background: rgba(132, 21, 21, 0.733);
-$color-pulse: $circle-fill-background;
+$color-range-track: #458865;
+$circle-fill-background: #06371ea2;
 $show-percentage: "0%";
 $font-family: "Lexend", sans-serif;
-$color-active: #02332c;
+$color-active: rgb(2, 51, 44);
+$earthWidthHight: 350px;
+$chart-height: $earthWidthHight;
 
 :root {
   /* Variablen */
@@ -48,13 +49,13 @@ h2 {
 }
 
 h3 {
-  font-size: 40px;
+  font-size: 25px;
   font-weight: 700;
   line-height: 50px;
 }
 
 h4 {
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 400;
   line-height: 40px;
   font-family: "Lexend", sans-serif;
@@ -78,8 +79,8 @@ p {
   }
 
   .earth_container {
-    width: 400px;
-    height: 400px;
+    width: $earthWidthHight;
+    height: $earthWidthHight;
     position: relative;
     left: 50%;
     top: 50%;
@@ -98,8 +99,6 @@ p {
         $circle-fill-background var(--circle-fill),
         transparent var(--circle-fill)
       );
-      box-shadow: 0 0 0 $color-pulse;
-      animation: pulse 2s ease-in-out infinite;
     }
 
     #earth {
@@ -164,7 +163,16 @@ p {
       font-weight: 700;
       font-size: 2.2rem;
     }
-    */
+  */
+    .info {
+      ul {
+        list-style: none;
+        padding: 0;
+        li {
+          font-weight: 600;
+        }
+      }
+    }
   }
 
   .countries {
@@ -183,8 +191,10 @@ p {
 
     .active {
       color: $color-active;
-      font-size: 20px;
+      font-size: 60px;
       transition: font-size 0.2s ease-in;
+      padding-top: 30px;
+      order: 4;
     }
   }
 
@@ -192,25 +202,12 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    //width: 300px;
-    height: 400px;
+    height: $chart-height;
   }
   //years-container
   .years-container {
     width: 90%;
     margin: auto;
-    .selectedYear {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      z-index: -1;
-      #selectedYear {
-        font-weight: bold;
-        font-size: 460px;
-        opacity: 0.5;
-      }
-    }
 
     .rang-slider[type="range"] {
       width: 100%;
@@ -249,6 +246,18 @@ p {
         font-weight: bolder;
         font-variant: small-caps;
       }
+    }
+  }
+  .selectedYear {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    #selectedYear {
+      font-weight: bold;
+      font-size: 460px;
+      opacity: 0.5;
     }
   }
 }

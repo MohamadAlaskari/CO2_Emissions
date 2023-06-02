@@ -147,15 +147,25 @@ const createChart = () => {
         labels: ["energieWirtschaft", "verbrennend", "andereIndustrielleVerbrennung", "transport", "building"],
         datasets: [
             {
-                label: "'My dataset'",
+                label: 'Carbon Anteil in %',
                 data: chartData,
-                backgroundColor: ["rgb(255, 99, 132)", "rgb(75, 192, 192)", "rgb(255, 205, 86)", "rgb(201, 203, 207)", "rgb(54, 162, 235)"],
+                backgroundColor: ["#1FB48E", "#C8DBCD", "#ACC4C0", "#6a7b67", "#7E6f"],
+                borderWidth: 2,
             },
         ],
     };
 
-    var options = {
+
+    const options = {
         responsive: true,
+        maintainAspectRatio: false,
+        title: {
+            display: true,
+            text: 'Polar Area Chart',
+            fontSize: 30,
+            fontColor: '#333',
+            padding: 20,
+        },
         legend: {
             display: true,
             position: 'bottom',
@@ -165,10 +175,21 @@ const createChart = () => {
             },
         },
         scale: {
-            display: false
-        }
+            ticks: {
+                beginAtZero: true,
+                min: 0,
+                max: 60,
+                stepSize: 10,
+            },
+            gridLines: {
+                color: 'rgba(0, 0, 0, 0.2)',
+                circular: true,
+            },
+            angleLines: {
+                color: 'rgba(0, 0, 0, 0.2)',
+            },
+        },
     };
-
 
     const plugins = [];
 
