@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--bootstrap CSS links-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -23,13 +23,13 @@
             <h1><span id="co2">CO2</span> Emissions</h1>
         </header>
 
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-12 col-lg-5  ">
-
                     <div class="earth_container">
                         <div id="earth">
-                            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+                            <!--
+                                            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 616.99 399.56">
                                 <defs>
                                     <style>
@@ -46,7 +46,7 @@
 
                                         .cls-1,
                                         .cls-3 {
-                                            fill: #fff;
+                                            fill: #000;
                                         }
 
                                         .cls-2 {
@@ -1602,12 +1602,12 @@
                                     </g>
                                 </g>
                             </svg>
+                            -->
                         </div>
                         <h2 id="show"></h2>
                     </div>
                 </div>
                 <div class=" col-sm-12 col-lg-2">
-
                     <div class="countries">
                         <div class="country china active">China</div>
                         <div class="country usa">USA</div>
@@ -1617,8 +1617,10 @@
                     </div>
                 </div>
                 <div class=" col-sm-12 col-lg-5  ">
-                    <div class="chart-container" style=" height: 330px;">
-                        <canvas id="myChart" aria-label="Hello ARIA World"></canvas>
+                    <div class="chart-container" >
+                        <canvas id="myChart" aria-label="Hello ARIA World">
+                            <div class="legend"></div>
+                        </canvas>
                     </div>
                 </div>
 
@@ -1645,9 +1647,7 @@
 
 <!--Chart JS links-->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.0/chart.min.js"
-    integrity="sha512-mlz/Fs1VtBou2TrUkGzX4VoGvybkD9nkeXWJm3rle0DPHssYYx4j+8kIS15T78ttGfmOjH0lLaBXGcShaVkdkg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 
 <!--bootstrap JS links-->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"

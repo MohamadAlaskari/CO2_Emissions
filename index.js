@@ -11,7 +11,7 @@ let selectedYear = 1971; // Startwert (Default Wert: Jahr)
 
 // Daten
 let year = null;
-let anteil_DerWeltCO2_Emissionen ="";
+let anteil_DerWeltCO2_Emissionen = "";
 let energieWirtschaft = null;
 let verbrennend = null;
 let andereIndustrielleVerbrennung = null;
@@ -62,7 +62,7 @@ const update_SelectedYear = () => {
 const fillEarth = () => {
     root.style.setProperty("--circle-fill", anteil_DerWeltCO2_Emissionen + "%");
     show.innerHTML = anteil_DerWeltCO2_Emissionen + "%";
-   
+
 };
 
 const fetchData = async (selectedCountry, selectedYear) => {
@@ -147,59 +147,28 @@ const createChart = () => {
         labels: ["energieWirtschaft", "verbrennend", "andereIndustrielleVerbrennung", "transport", "building"],
         datasets: [
             {
-                label: "",
+                label: "'My dataset'",
                 data: chartData,
                 backgroundColor: ["rgb(255, 99, 132)", "rgb(75, 192, 192)", "rgb(255, 205, 86)", "rgb(201, 203, 207)", "rgb(54, 162, 235)"],
             },
         ],
     };
 
-    const options = {
+    var options = {
         responsive: true,
-        title: {
-            display: true,
-            text: "ztddztdztd",
-            fontSize: 18,
-            fontColor: "#333",
-            padding: 20,
-        },
         legend: {
-            position: "bottom",
+            display: true,
+            position: 'bottom',
             labels: {
-                fontSize: 29,
-                fontColor: "red",
+                fontColor: '#333',
+                fontSize: 12,
             },
         },
-        scales: {
-            x: {
-                display: false, // Hier wird die x-Achse ausgeblendet
-                type: "category",
-                labels: [],
-                grid: {
-                    display: true,
-                    color: "red",
-                },
-            },
-            y: {
-                display: false, // Hier wird die y-Achse ausgeblendet
-                ticks: {
-                    beginAtZero: true,
-                    fontColor: "#a66",
-                },
-                grid: {
-                    display: false,
-                    color: "#000",
-                },
-                scaleLabel: {
-                    display: true,
-                    labelString: "Sales ($)",
-                    fontColor: "#333",
-                    fontStyle: "bold",
-                    fontSize: 16,
-                },
-            },
-        },
+        scale: {
+            display: false
+        }
     };
+
 
     const plugins = [];
 
