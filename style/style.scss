@@ -215,20 +215,6 @@ p {
   }
 }
 
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 $color-pulse;
-  }
-
-  70% {
-    box-shadow: 0 0 0 50px rgba(255, 0, 0, 0);
-  }
-
-  100% {
-    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
-  }
-}
-
 @keyframes bgpos {
   0% {
     background-position: 0 0;

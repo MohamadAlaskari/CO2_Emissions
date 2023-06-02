@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 :root {
   /* Variablen */
   /* Colors */
@@ -62,6 +63,7 @@ p {
   align-items: center;
   justify-content: center;
 }
+
 .main .earth_container {
   width: 300px;
   height: 300px;
@@ -82,6 +84,7 @@ p {
   }
   */
 }
+
 .main .earth_container::before {
   position: absolute;
   content: "";
@@ -94,10 +97,12 @@ p {
   box-shadow: 0 0 0 rgba(132, 21, 21, 0.733);
   animation: pulse 2s ease-in-out infinite;
 }
+
 .main #myChart {
   width: 250px;
   height: 250px;
 }
+
 .main #show {
   margin: 0;
   transform: translateY(-70px);
@@ -105,6 +110,7 @@ p {
   text-align: center;
   font-size: 32px;
 }
+
 .main .countries {
   display: flex;
   flex-direction: column;
@@ -112,27 +118,32 @@ p {
   align-items: center;
   height: 100%;
 }
+
 .main .countries .country {
   color: #fff;
   cursor: pointer;
   font-size: large;
   font-weight: bolder;
 }
+
 .main .countries .active {
   color: #02332c;
   font-size: 20px;
   transition: font-size 0.2s ease-in;
 }
+
 .main .chart-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .main .selectedYear {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .main .selectedYear #selectedYear {
   position: absolute;
   bottom: -8px;
@@ -141,11 +152,13 @@ p {
   z-index: -100;
   opacity: 0.5;
 }
+
 .main .rang-slider[type=range] {
   width: 100%;
   margin-top: 10px;
   -webkit-appearance: none;
 }
+
 .main .rang-slider[type=range]::-webkit-slider-runnable-track {
   width: 100%;
   height: 5px;
@@ -153,6 +166,7 @@ p {
   background-color: #148c7c;
   cursor: pointer;
 }
+
 .main .rang-slider[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 15px;
@@ -161,6 +175,7 @@ p {
   border-radius: 100%;
   transform: translateY(-5px);
 }
+
 .main .years {
   display: flex;
   justify-content: space-between;
@@ -168,12 +183,14 @@ p {
   width: 103%;
   transform: translateX(-12px);
 }
+
 .main .years .year {
   font-size: 12px;
   text-align: center;
   font-weight: bolder;
   font-variant: small-caps;
 }
+
 .main .burger__smoke {
   position: absolute;
   width: 100%;
@@ -181,7 +198,7 @@ p {
   left: 0;
   bottom: 1%;
   -webkit-mask: url(#smoke);
-          mask: url(#smoke);
+  mask: url(#smoke);
   -webkit-mask-box-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/386739/smoke-mask.png);
   background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/386739/smoke.png);
   background-size: 100% auto;
@@ -194,18 +211,24 @@ p {
   0% {
     box-shadow: 0 0 0 0 rgba(132, 21, 21, 0.733);
   }
+
   70% {
     box-shadow: 0 0 0 50px rgba(255, 0, 0, 0);
   }
+
   100% {
     box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
   }
 }
+
 @keyframes bgpos {
   0% {
     background-position: 0 0;
   }
+
   100% {
     background-position: 0 340%;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */
