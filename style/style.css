@@ -94,6 +94,58 @@ p {
   box-shadow: 0 0 0 rgba(132, 21, 21, 0.733);
   animation: pulse 2s ease-in-out infinite;
 }
+.main .earth_container #accountLine {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2%;
+}
+.main .earth_container a {
+  color: black;
+  text-decoration: none;
+}
+.main .earth_container #earth {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  border-radius: 50%;
+  background: transparent url("https://pngimg.com/uploads/world_map/world_map_PNG1.png");
+  background-size: cover;
+  box-shadow: inset 0px -20px 50px 10px rgba(255, 255, 255, 0.5), 0px 0px 30px 6px rgba(226, 226, 226, 0.44);
+  transform-style: preserve-3d;
+  animation: rotate 15s linear infinite;
+}
+.main .earth_container .contactB {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.main .earth_container .contactB .whatsLine {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.main .earth_container .contactB .whatsLine img {
+  width: 50px;
+  height: 50px;
+}
+.main .earth_container .contactB .whatsLine a {
+  text-decoration: none;
+  color: #e4232c;
+  font-size: 20px;
+  font-weight: 600;
+}
+@keyframes rotate {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 530px 0;
+  }
+}
 .main #myChart {
   width: 250px;
   height: 250px;
@@ -173,28 +225,4 @@ p {
   text-align: center;
   font-weight: bolder;
   font-variant: small-caps;
-}
-.main .burger__smoke {
-  position: absolute;
-  width: 100%;
-  padding-top: 100%;
-  left: 0;
-  bottom: 1%;
-  -webkit-mask: url(#smoke);
-          mask: url(#smoke);
-  -webkit-mask-box-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/386739/smoke-mask.png);
-  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/386739/smoke.png);
-  background-size: 100% auto;
-  animation: bgpos 8s linear infinite forwards;
-  opacity: 1;
-  transform-origin: bottom center;
-}
-
-@keyframes bgpos {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 0 340%;
-  }
 }/*# sourceMappingURL=style.css.map */
