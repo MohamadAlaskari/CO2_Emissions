@@ -11,7 +11,7 @@ let selectedYear = 1971; // Startwert (Default Wert: Jahr)
 
 // Daten
 let year = null;
-let anteil_DerWeltCO2_Emissionen = "0.89";
+let anteil_DerWeltCO2_Emissionen ="0,89";
 let energieWirtschaft = null;
 let verbrennend = null;
 let andereIndustrielleVerbrennung = null;
@@ -62,6 +62,7 @@ const update_SelectedYear = () => {
  *
  */
 const fillEarth = () => {
+    fetchData(selectedCountry, selectedYear);
     root.style.setProperty("--circle-fill", anteil_DerWeltCO2_Emissionen + "%");
     show.innerHTML = anteil_DerWeltCO2_Emissionen + "%";
 };
@@ -83,11 +84,12 @@ const fetchData = async (selectedCountry, selectedYear) => {
             let z_building = null;
 
             // Durchsuche die Daten für das ausgewählte Land nach dem ausgewählten Jahr
-            for (let i = 0; i < countryData.length; i++) {
+            for (let i = 0; i <= countryData.length; i++) {
+                console.log("Tasnim: "+ countryData[i].Jahr)
                 if (countryData[i].Jahr == selectedYear) {
                     console.log("SelectedcountryData für " + selectedCountry + " in: " + countryData[i].Jahr);
                     z_year = countryData[i]["Jahr"];
-                    z_anteil_DerWeltCO2_Emissionen = countryData[i]["Anteil der Welt CO2-Emissionen"];
+                    z_anteil_DerWeltCO2_Emissionen = countryData[i-1]["Anteil der Welt CO2-Emissionen"];
                     z_energieWirtschaft = countryData[i]["Energiewirtschaft"];
                     z_verbrennend = countryData[i]["nicht verbrennend"];
                     z_andereIndustrielleVerbrennung = countryData[i]["andere industrielle Verbrennung"];
