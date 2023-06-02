@@ -11,7 +11,7 @@ let selectedYear = 1971; // Startwert (Default Wert: Jahr)
 
 // Daten
 let year = null;
-let anteil_DerWeltCO2_Emissionen ="0,89";
+let anteil_DerWeltCO2_Emissionen ="";
 let energieWirtschaft = null;
 let verbrennend = null;
 let andereIndustrielleVerbrennung = null;
@@ -27,10 +27,8 @@ const update_SelectedCountry = () => {
         country.addEventListener("click", () => {
             // Entferne die 'active'-Klasse von allen Ländern
             countriesElemnts.forEach((c) => c.classList.remove("active"));
-
             // Füge die 'active'-Klasse nur dem ausgewählten Land hinzu
             country.classList.add("active");
-
             selectedCountry = country.textContent;
             console.log("Klick: selectedCountry: " + selectedCountry);
             fetchData(selectedCountry, selectedYear);
@@ -47,9 +45,9 @@ const update_SelectedYear = () => {
         selectedYear = yearsRange.value;
         // Aktualisiere das angezeigte Jahr
         selectedYearElem.textContent = selectedYear;
+        console.log(chartData);
         fetchData(selectedCountry, selectedYear);
         fillEarth();
-        console.log(chartData);
         createChart();
         console.log("Klick: selectedYear: " + selectedYear);
     });
@@ -62,9 +60,9 @@ const update_SelectedYear = () => {
  *
  */
 const fillEarth = () => {
-    fetchData(selectedCountry, selectedYear);
     root.style.setProperty("--circle-fill", anteil_DerWeltCO2_Emissionen + "%");
     show.innerHTML = anteil_DerWeltCO2_Emissionen + "%";
+   
 };
 
 const fetchData = async (selectedCountry, selectedYear) => {
@@ -84,12 +82,11 @@ const fetchData = async (selectedCountry, selectedYear) => {
             let z_building = null;
 
             // Durchsuche die Daten für das ausgewählte Land nach dem ausgewählten Jahr
-            for (let i = 0; i <= countryData.length; i++) {
-                console.log("Tasnim: "+ countryData[i].Jahr)
+            for (let i = 0; i < countryData.length; i++) {
                 if (countryData[i].Jahr == selectedYear) {
                     console.log("SelectedcountryData für " + selectedCountry + " in: " + countryData[i].Jahr);
                     z_year = countryData[i]["Jahr"];
-                    z_anteil_DerWeltCO2_Emissionen = countryData[i-1]["Anteil der Welt CO2-Emissionen"];
+                    z_anteil_DerWeltCO2_Emissionen = countryData[i]["Anteil der Welt CO2-Emissionen"];
                     z_energieWirtschaft = countryData[i]["Energiewirtschaft"];
                     z_verbrennend = countryData[i]["nicht verbrennend"];
                     z_andereIndustrielleVerbrennung = countryData[i]["andere industrielle Verbrennung"];
@@ -118,6 +115,7 @@ const fetchData = async (selectedCountry, selectedYear) => {
                 chartData = [energieWirtschaft, verbrennend, andereIndustrielleVerbrennung, transport, building];
                 console.log("chartData von fetch function: ", chartData);
                 createChart();
+                fillEarth();
             } else {
                 console.log("Daten für das ausgewählte Jahr nicht gefunden.");
             }
@@ -219,8 +217,8 @@ const app = () => {
     update_SelectedCountry();
     update_SelectedYear();
     fetchData(selectedCountry, selectedYear);
-    fillEarth();
     createChart();
+    fillEarth();
 };
 
 app();
