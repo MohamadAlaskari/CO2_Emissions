@@ -70,6 +70,17 @@ p {
   top: 50%;
   transform: translate(-50%, -50%);
   /*
+      @keyframes move-svg {
+        0% {
+          transform: translateX(0);
+        }
+
+        100% {
+          transform: translateX(100%);
+        }
+      }
+  */
+  /*
     &::after {
       content: $show-percentage;
       position: absolute;
@@ -94,7 +105,6 @@ p {
 }
 .main .earth_container #earth {
   border: 4px solid #000;
-  overflow: hidden;
   position: relative;
   width: inherit;
   height: inherit;
@@ -104,19 +114,12 @@ p {
   background-size: cover;
   transform-style: preserve-3d;
   animation: rotate 2s linear infinite;
-}
-.main .earth_container #earth svg {
-  height: inherit;
-  transform-style: preserve-3d;
-  animation: move-svg 4s linear infinite;
-}
-@keyframes move-svg {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(100%);
-  }
+  /*
+  svg {
+    height: inherit;
+    transform-style: preserve-3d;
+    animation: move-svg 4s linear infinite;
+  }*/
 }
 @keyframes rotate {
   0% {
@@ -154,7 +157,7 @@ p {
   font-weight: bolder;
 }
 .main .countries .active {
-  color: rgb(2, 51, 44);
+  color: rgba(0, 0, 0, 0.775);
   font-size: 60px;
   transition: font-size 0.2s ease-in;
   padding-top: 30px;

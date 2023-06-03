@@ -9,7 +9,7 @@ $color-range-track: #458865;
 $circle-fill-background: #06371ea2;
 $show-percentage: "0%";
 $font-family: "Lexend", sans-serif;
-$color-active: rgb(2, 51, 44);
+$color-active: rgba(0, 0, 0, 0.775);
 $earthWidthHight: 350px;
 $chart-height: $earthWidthHight;
 
@@ -104,7 +104,6 @@ p {
     #earth {
       border: 4px solid #000;
 
-      overflow: hidden;
       position: relative;
       width: inherit;
       height: inherit;
@@ -116,14 +115,14 @@ p {
       background-size: cover;
       transform-style: preserve-3d;
       animation: rotate 2s linear infinite;
-
+      /*
       svg {
         height: inherit;
         transform-style: preserve-3d;
         animation: move-svg 4s linear infinite;
-      }
+      }*/
     }
-
+    /*
     @keyframes move-svg {
       0% {
         transform: translateX(0);
@@ -133,7 +132,7 @@ p {
         transform: translateX(100%);
       }
     }
-
+*/
     @keyframes rotate {
       0% {
         background-position: 0 0;
