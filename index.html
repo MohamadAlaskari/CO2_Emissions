@@ -32,7 +32,7 @@
             <div class="row">
                 <div class="col-sm-12 col-lg-5  ">
                     <div class="earth_container">
-                    
+
                         <div id="earth">
                             <!--
                                             <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
@@ -1611,13 +1611,11 @@
                             -->
                         </div>
                         <h6 id="show"></h6>
-                
-                        <div class="info">
-                            <ul>
-                                <li>Rank: <span id="rank" class="info-wert"></span></li>
-                                <li>population: <span id="population" class="info-wert"></span></li>
-                                <li>CO2-Emissionen (Tonnen)": <span id="co2Ton" class="info-wert"></span> </li>
-                            </ul>
+
+                        <div class="infos">
+                            <p>Rank: <span id="rank"></span></p>
+                            <p>Population: <span id="population"></span></p>
+                            <p>CO2-Emissionen (Tonnen) <span id="co2_tonnen"></span></p>
                         </div>
                     </div>
                 </div>
@@ -1632,9 +1630,7 @@
                 </div>
                 <div class=" col-sm-12 col-lg-5  ">
                     <div class="chart-container">
-                        <canvas id="myChart" aria-label="Hello ARIA World">
-                            <div class="legend"></div>
-                        </canvas>
+                        <canvas id="myChart"></canvas>
                     </div>
                 </div>
 
@@ -1648,7 +1644,6 @@
                             <div class="year last-year">2016</div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

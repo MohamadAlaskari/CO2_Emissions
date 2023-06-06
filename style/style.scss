@@ -12,6 +12,7 @@ $font-family: "Lexend", sans-serif;
 $color-active: rgba(0, 0, 0, 0.775);
 $earthWidthHight: 350px;
 $chart-height: $earthWidthHight;
+$chart-width: $earthWidthHight;
 
 :root {
   /* Variablen */
@@ -34,7 +35,6 @@ h6,
 a {
   font-family: "Lexend", sans-serif;
   color: $color-font-primary;
-  
 }
 
 h1 {
@@ -60,14 +60,6 @@ h4 {
   font-weight: 400;
   line-height: 40px;
   font-family: "Lexend", sans-serif;
-}
-
-p {
-  font-family: "Lexend", sans-serif;
-  color: #848b9f;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 30px;
 }
 
 .main {
@@ -164,15 +156,6 @@ p {
       font-size: 2.2rem;
     }
   */
-    .info {
-      ul {
-        list-style: none;
-        padding: 0;
-        li {
-          font-weight: 600;
-        }
-      }
-    }
   }
 
   .countries {
@@ -202,7 +185,34 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: $chart-height;
+    #myChart {
+      height: $chart-height;
+      width: $chart-width;
+    }
+  }
+  .legende {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .legende-rows {
+      display: flex;
+
+      width: 70%;
+      .legend {
+        .color {
+          width: 20px;
+          height: 20px;
+          border-radius: 100%;
+          background-color: #045953;
+          border: 2px solid #fff;
+        }
+        p {
+          margin: 0;
+          padding-left: 5px;
+        }
+      }
+    }
   }
   //years-container
   .years-container {

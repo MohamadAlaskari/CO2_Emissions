@@ -8,7 +8,9 @@ const container = document.querySelector(".earth_container");
 const countriesElemnts = document.querySelectorAll(".country");
 let selectedCountry = "China"; // Startwert für country (Default Wert: Land)
 let selectedYear = 1971; // Startwert (Default Wert: Jahr)
-
+let rankElement = document.getElementById("rank");
+let pobulationElement = document.getElementById("population");
+let co2_tonnenElement = document.getElementById("co2_tonnen");
 // Daten
 let year = null;
 let anteil_DerWeltCO2_Emissionen = "";
@@ -17,6 +19,9 @@ let verbrennend = null;
 let andereIndustrielleVerbrennung = null;
 let transport = null;
 let building = null;
+let rank = null;
+let population = null;
+let co2_tonnen = null;
 // Chartdaten
 let chartData = [energieWirtschaft, verbrennend, andereIndustrielleVerbrennung, transport, building];
 console.log(chartData);
@@ -33,6 +38,7 @@ const update_SelectedCountry = () => {
             console.log("Klick: selectedCountry: " + selectedCountry);
             fetchData(selectedCountry, selectedYear);
             fillEarth();
+            fillInfo();
             createChart();
             console.log(chartData);
         });
@@ -48,6 +54,7 @@ const update_SelectedYear = () => {
         console.log(chartData);
         fetchData(selectedCountry, selectedYear);
         fillEarth();
+        fillInfo();
         createChart();
         console.log("Klick: selectedYear: " + selectedYear);
     });
@@ -80,6 +87,10 @@ const fetchData = async (selectedCountry, selectedYear) => {
             let z_andereIndustrielleVerbrennung = null;
             let z_transport = null;
             let z_building = null;
+            let z_rank = null;
+            let z_population = null;
+            let z_co2_tonnen = null;
+
 
             // Durchsuche die Daten für das ausgewählte Land nach dem ausgewählten Jahr
             for (let i = 0; i < countryData.length; i++) {
@@ -92,6 +103,9 @@ const fetchData = async (selectedCountry, selectedYear) => {
                     z_andereIndustrielleVerbrennung = countryData[i]["andere industrielle Verbrennung"];
                     z_transport = countryData[i]["Transport"];
                     z_building = countryData[i]["Building"];
+                    z_rank = countryData[i]["Rank"];
+                    z_co2_tonnen = countryData[i]["Fossile CO2-Emissionen (Tonnen)"];
+                    z_population = countryData[i]["Bevoelkerung"];
                     break;
                 }
             }
@@ -103,7 +117,10 @@ const fetchData = async (selectedCountry, selectedYear) => {
                 z_verbrennend !== null &&
                 z_andereIndustrielleVerbrennung !== null &&
                 z_transport !== null &&
-                z_building !== null
+                z_building !== null &&
+                z_rank !== null &&
+                z_population !== null &&
+                z_co2_tonnen !== null
             ) {
                 anteil_DerWeltCO2_Emissionen = parseFloat(z_anteil_DerWeltCO2_Emissionen.replace("%", ""));
                 energieWirtschaft = parseFloat(z_energieWirtschaft.replace("%", ""));
@@ -111,11 +128,15 @@ const fetchData = async (selectedCountry, selectedYear) => {
                 andereIndustrielleVerbrennung = parseFloat(z_andereIndustrielleVerbrennung.replace("%", ""));
                 transport = parseFloat(z_transport.replace("%", ""));
                 building = parseFloat(z_building.replace("%", ""));
+                rank = z_rank;
+                population = z_population;
+                co2_tonnen = z_co2_tonnen;
 
                 chartData = [energieWirtschaft, verbrennend, andereIndustrielleVerbrennung, transport, building];
                 console.log("chartData von fetch function: ", chartData);
                 createChart();
                 fillEarth();
+                fillInfo();
             } else {
                 console.log("Daten für das ausgewählte Jahr nicht gefunden.");
             }
@@ -199,13 +220,19 @@ const createChart = () => {
 
     chartInstance = new Chart(ctx, config);
 };
-
+function fillInfo() {
+    rankElement.innerHTML = rank;
+    pobulationElement.innerHTML = population;
+    co2_tonnenElement.innerHTML = co2_tonnen;
+}
 const app = () => {
     update_SelectedCountry();
     update_SelectedYear();
     fetchData(selectedCountry, selectedYear);
     createChart();
     fillEarth();
+    fillInfo();
 };
+
 
 app();
