@@ -166,14 +166,13 @@ const createChart = () => {
             fontColor: '#333',
             padding: 20,
         },
-        legend: {
-            display: true,
-            position: 'bottom',
-            labels: {
-                fontColor: '#333',
-                fontSize: 12,
+        plugins: {
+            legend: {
+                display: false,
+                position: 'bottom',
             },
         },
+
         scale: {
             ticks: {
                 beginAtZero: true,
@@ -191,13 +190,11 @@ const createChart = () => {
         },
     };
 
-    const plugins = [];
-
     const config = {
         type: type,
         data: data,
         options: options,
-        plugins: plugins,
+
     };
 
     chartInstance = new Chart(ctx, config);
