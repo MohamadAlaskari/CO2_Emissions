@@ -132,12 +132,12 @@ h4 {
     font-size: 32px;
 }
 
-.main .earth_container .infos p {
+.main .infos p {
     margin: 0;
     font-weight: bold;
 }
 
-.main .earth_container .infos p span {
+.main .infos p span {
     font-weight: normal;
 }
 
@@ -212,6 +212,8 @@ h4 {
     padding-left: 5px;
 }
 
+
+/*footer*/
 footer .years-container {
     width: 90%;
     margin: auto;
