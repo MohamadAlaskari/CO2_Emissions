@@ -23,19 +23,20 @@ let rank = null;
 let population = null;
 let co2_tonnen = null;
 // Chartdaten
-let chartData = [energieWirtschaft, verbrennend, andereIndustrielleVerbrennung, transport, building];
+let chartData = [
+    energieWirtschaft,
+    verbrennend,
+    andereIndustrielleVerbrennung,
+    transport,
+    building,
+];
 console.log(chartData);
 
 // update_SelectedCountry nach Klick
 const update_SelectedCountry = () => {
     countriesElemnts.forEach((country) => {
         country.addEventListener("click", () => {
-            // Entferne die 'active'-Klasse von allen Ländern
-            countriesElemnts.forEach((c) => c.classList.remove("active"));
-            // Füge die 'active'-Klasse nur dem ausgewählten Land hinzu
-            country.classList.add("active");
             selectedCountry = country.textContent;
-            console.log("Klick: selectedCountry: " + selectedCountry);
             fetchData(selectedCountry, selectedYear);
             fillEarth();
             fillInfo();
@@ -62,14 +63,11 @@ const update_SelectedYear = () => {
 
 /**
  * fillEarth
- *
  * Gibt den Prozentsatz der CO2-Emissionen aus
- *
  */
 const fillEarth = () => {
     root.style.setProperty("--circle-fill", anteil_DerWeltCO2_Emissionen + "%");
     show.innerHTML = anteil_DerWeltCO2_Emissionen + "%";
-
 };
 
 const fetchData = async (selectedCountry, selectedYear) => {
@@ -91,16 +89,22 @@ const fetchData = async (selectedCountry, selectedYear) => {
             let z_population = null;
             let z_co2_tonnen = null;
 
-
             // Durchsuche die Daten für das ausgewählte Land nach dem ausgewählten Jahr
             for (let i = 0; i < countryData.length; i++) {
                 if (countryData[i].Jahr == selectedYear) {
-                    console.log("SelectedcountryData für " + selectedCountry + " in: " + countryData[i].Jahr);
+                    console.log(
+                        "SelectedcountryData für " +
+                        selectedCountry +
+                        " in: " +
+                        countryData[i].Jahr
+                    );
                     z_year = countryData[i]["Jahr"];
-                    z_anteil_DerWeltCO2_Emissionen = countryData[i]["Anteil der Welt CO2-Emissionen"];
+                    z_anteil_DerWeltCO2_Emissionen =
+                        countryData[i]["Anteil der Welt CO2-Emissionen"];
                     z_energieWirtschaft = countryData[i]["Energiewirtschaft"];
                     z_verbrennend = countryData[i]["nicht verbrennend"];
-                    z_andereIndustrielleVerbrennung = countryData[i]["andere industrielle Verbrennung"];
+                    z_andereIndustrielleVerbrennung =
+                        countryData[i]["andere industrielle Verbrennung"];
                     z_transport = countryData[i]["Transport"];
                     z_building = countryData[i]["Building"];
                     z_rank = countryData[i]["Rank"];
@@ -122,17 +126,27 @@ const fetchData = async (selectedCountry, selectedYear) => {
                 z_population !== null &&
                 z_co2_tonnen !== null
             ) {
-                anteil_DerWeltCO2_Emissionen = parseFloat(z_anteil_DerWeltCO2_Emissionen.replace("%", ""));
+                anteil_DerWeltCO2_Emissionen = parseFloat(
+                    z_anteil_DerWeltCO2_Emissionen.replace("%", "")
+                );
                 energieWirtschaft = parseFloat(z_energieWirtschaft.replace("%", ""));
                 verbrennend = parseFloat(z_verbrennend.replace("%", ""));
-                andereIndustrielleVerbrennung = parseFloat(z_andereIndustrielleVerbrennung.replace("%", ""));
+                andereIndustrielleVerbrennung = parseFloat(
+                    z_andereIndustrielleVerbrennung.replace("%", "")
+                );
                 transport = parseFloat(z_transport.replace("%", ""));
                 building = parseFloat(z_building.replace("%", ""));
                 rank = z_rank;
                 population = z_population;
                 co2_tonnen = z_co2_tonnen;
 
-                chartData = [energieWirtschaft, verbrennend, andereIndustrielleVerbrennung, transport, building];
+                chartData = [
+                    energieWirtschaft,
+                    verbrennend,
+                    andereIndustrielleVerbrennung,
+                    transport,
+                    building,
+                ];
                 console.log("chartData von fetch function: ", chartData);
                 createChart();
                 fillEarth();
@@ -165,48 +179,59 @@ const createChart = () => {
 
     const type = "polarArea"; //doughnut, pie, polarArea, line, bar, bubble
     const data = {
-        labels: ["energieWirtschaft", "verbrennend", "andereIndustrielleVerbrennung", "transport", "building"],
+        labels: [
+            "energieWirtschaft",
+            "verbrennend",
+            "andereIndustrielleVerbrennung",
+            "transport",
+            "building",
+        ],
         datasets: [
             {
-                label: 'Carbon Anteil in %',
+                label: "Carbon Anteil in %",
                 data: chartData,
-                backgroundColor: ["#1FB48E", "#C8DBCD", "#ACC4C0", "#6a7b67", "#7E6f"],
+                backgroundColor: [
+                    "rgba(6, 55, 30, 0.7)",
+                    "rgba(6, 115, 200, 0.7)",
+                    "rgba(255, 55, 30, 0.7)",
+                    "rgba(28, 91, 76, 0.7)",
+                    "rgba(110, 55, 30, 0.7)",
+                ],
                 borderWidth: 2,
             },
         ],
     };
 
-
     const options = {
         responsive: true,
         maintainAspectRatio: false,
-        title: {
-            display: true,
-            text: 'Polar Area Chart',
-            fontSize: 30,
-            fontColor: '#333',
-            padding: 20,
-        },
+
         plugins: {
             legend: {
                 display: false,
-                position: 'bottom',
+                position: "bottom",
             },
-        },
-
-        scale: {
-            ticks: {
-                beginAtZero: true,
-                min: 0,
-                max: 60,
-                stepSize: 10,
+            title: {
+                display: false,
+                text: "CO2",
+                fontSize: 3,
+                fontColor: "#000",
+                padding: 20,
+            },
+            scale: {
+                ticks: {
+                    beginAtZero: true,
+                    min: 0,
+                    max: 60,
+                    stepSize: 10,
+                },
             },
             gridLines: {
-                color: 'rgba(0, 0, 0, 0.2)',
+                color: "rgba(0, 0, 0, 0.3)",
                 circular: true,
             },
             angleLines: {
-                color: 'rgba(0, 0, 0, 0.2)',
+                color: "rgba(0, 0, 0, 0.3)",
             },
         },
     };
@@ -215,7 +240,6 @@ const createChart = () => {
         type: type,
         data: data,
         options: options,
-
     };
 
     chartInstance = new Chart(ctx, config);
@@ -225,6 +249,7 @@ function fillInfo() {
     pobulationElement.innerHTML = population;
     co2_tonnenElement.innerHTML = co2_tonnen;
 }
+
 const app = () => {
     update_SelectedCountry();
     update_SelectedYear();
@@ -234,5 +259,18 @@ const app = () => {
     fillInfo();
 };
 
-
 app();
+
+var countries = document.querySelectorAll('.countries .country');
+var activeCountry = document.querySelector('.countries .country.active');
+
+countries.forEach((country) => {
+    country.addEventListener('click', () => {
+        // das aktive Land wird inaktiv
+        activeCountry.classList.remove('active');
+        // das geklickte Land wird aktiv
+        country.classList.add('active');
+        // das geklickte Land wird zum neuen aktiven Land
+        activeCountry = country;
+    });
+});

@@ -1,15 +1,40 @@
-@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700|Crimson+Text:400,400italic,700italic,700);
 
 :root {
     /* Variablen */
     /* Colors */
-    /* Colors */
+    --color-background: OldLace;
+    --color-font: #404040;
+    --color-border: #000;
+    --color-gradient-start: rgba(6, 55, 30, 0.6352941176);
+    --color-text: #404040;
+    --color-white: #3a3737;
+    --color-active: rgba(0, 0, 0, 0.775);
+    --color-slider: #458865;
+    --color-slider-thumb: #045953;
+    --color-legend-1: #d25a5a;
+    --color-legend-2: #117f78;
+    --color-legend-3: #2c0459;
+    --color-legend-4: #590438;
+    --color-legend-5: #590404;
+    /* Font sizes */
+    --font-size-h1: 40px;
+    --font-size-h2: 30px;
+    --font-size-h3: 25px;
+    --font-size-h4: 20px;
+    --font-size-active: 9vmin;
+    --font-size-show: 32px;
+    --font-size-year: 12px;
+    --font-size-selectedYear: 80vmin;
+
+    /* Other Variables */
     --show-percentage: "0%";
 }
 
 body {
-    background: rgb(90, 201, 171);
+    background: var(--color-background);
     overflow: hidden;
+    margin: 0;
 }
 
 h1,
@@ -19,69 +44,51 @@ h4,
 h5,
 h6,
 a {
-    font-family: "Lexend", sans-serif;
-    color: #000000;
+    font-family: 'Crimson Text', serif;
+    color: var(--color-font);
 }
 
 h1 {
-    font-size: 40px;
+    font-size: var(--font-size-h1);
     font-weight: 800;
     line-height: 90px;
 }
 
 h2 {
-    font-size: 30px;
+    font-size: var(--font-size-h2);
     font-weight: 700;
     line-height: 60px;
 }
 
 h3 {
-    font-size: 25px;
+    font-size: var(--font-size-h3);
     font-weight: 700;
     line-height: 50px;
 }
 
 h4 {
-    font-size: 20px;
+    font-size: var(--font-size-h4);
     font-weight: 400;
     line-height: 40px;
     font-family: "Lexend", sans-serif;
 }
 
 .main header {
-    height: 60px;
-    margin: 20px 0;
+    margin: 0 0 5px;
+    padding: 1vmin 1vmin;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+.main header .logo {
+    scale: 0.5;
+}
+
+
 .main .earth_container {
     width: 350px;
     height: 350px;
-    /*
-      @keyframes move-svg {
-        0% {
-          transform: translateX(0);
-        }
-
-        100% {
-          transform: translateX(100%);
-        }
-      }
-  */
-    /*
-    &::after {
-      content: $show-percentage;
-      position: absolute;
-      bottom: 15%;
-      left: 50%;
-      transform: translate(-50%, 50%);
-      color: $color-showPercentage;
-      font-weight: 700;
-      font-size: 2.2rem;
-    }
-  */
 }
 
 .main .earth_container::before {
@@ -89,14 +96,14 @@ h4 {
     content: "";
     width: inherit;
     height: inherit;
-    border: 4px solid #000;
+    border: 4px solid var(--color-border);
     border-radius: 100%;
     z-index: -1;
-    background-image: linear-gradient(0deg, rgba(6, 55, 30, 0.6352941176) var(--circle-fill), transparent var(--circle-fill));
+    background-image: linear-gradient(0deg, var(--color-gradient-start) var(--circle-fill), transparent var(--circle-fill));
 }
 
 .main .earth_container #earth {
-    border: 4px solid #000;
+    border: 4px solid var(--color-border);
     position: relative;
     width: inherit;
     height: inherit;
@@ -106,12 +113,6 @@ h4 {
     background-size: cover;
     transform-style: preserve-3d;
     animation: rotate 2s linear infinite;
-    /*
-  svg {
-    height: inherit;
-    transform-style: preserve-3d;
-    animation: move-svg 4s linear infinite;
-  }*/
 }
 
 @keyframes rotate {
@@ -127,9 +128,9 @@ h4 {
 .main .earth_container #show {
     margin: 0;
     transform: translateY(-70px);
-    color: rgb(142, 233, 219);
+    color: var(--color-text);
     text-align: center;
-    font-size: 32px;
+    font-size: var(--font-size-show);
 }
 
 .main .infos p {
@@ -143,27 +144,55 @@ h4 {
 
 .main .countries {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     height: 100%;
 }
 
 .main .countries .country {
-    color: #fff;
+    color: var(--color-white);
     cursor: pointer;
     font-size: large;
     font-weight: bolder;
 }
 
-.main .countries .active {
-    color: rgba(0, 0, 0, 0.775);
-    font-size: 60px;
-    transition: font-size 0.2s ease-in;
-    padding-top: 30px;
-    order: 4;
+.main .countries .country:not(:first-child) {
+    padding-top: 2vmin;
+
 }
 
+/*
+.usa {
+    order: 3;
+}
+.germany {
+    order: 1;
+}
+.china {
+    order: 3;
+}
+
+.japan {
+    order: 2;
+
+}
+
+.glopal {
+    order: 4;
+
+}
+
+
+*/
+
+.main .countries .active {
+    color: var(--color-active);
+    font-size: var(--font-size-active);
+    transition: font-size 0.2s ease-in;
+    padding-top: 0px;
+}
 .main .chart-container {
     display: flex;
     justify-content: center;
@@ -184,27 +213,27 @@ h4 {
     width: 20px;
     height: 20px;
     border-radius: 100%;
-    border: 2px solid #fff;
+    border: 2px solid var(--color-white);
 }
 
 .main .legende .legende-row .legend .color-1 {
-    background-color: #d25a5a;
+    background-color: var(--color-legend-1);
 }
 
 .main .legende .legende-row .legend .color-2 {
-    background-color: #117f78;
+    background-color: var(--color-legend-2);
 }
 
 .main .legende .legende-row .legend .color-3 {
-    background-color: #2c0459;
+    background-color: var(--color-legend-3);
 }
 
 .main .legende .legende-row .legend .color-4 {
-    background-color: #590438;
+    background-color: var(--color-legend-4);
 }
 
 .main .legende .legende-row .legend .color-5 {
-    background-color: #590404;
+    background-color: var(--color-legend-5);
 }
 
 .main .legende .legende-row .legend p {
@@ -212,8 +241,6 @@ h4 {
     padding-left: 5px;
 }
 
-
-/*footer*/
 footer .years-container {
     width: 90%;
     margin: auto;
@@ -222,7 +249,7 @@ footer .years-container {
 footer .years-container .rang-slider[type=range] {
     width: 100%;
     margin-top: 10px;
-    background-color: #458865;
+    background-color: var(--color-slider);
     border-radius: 100px;
     -webkit-appearance: none;
 }
@@ -237,7 +264,7 @@ footer .years-container .rang-slider[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 15px;
     height: 15px;
-    background-color: #045953;
+    background-color: var(--color-slider-thumb);
     border-radius: 100%;
     transform: translateY(-5px);
     cursor: pointer;
@@ -252,7 +279,7 @@ footer .years-container .years {
 }
 
 footer .years-container .years .year {
-    font-size: 12px;
+    font-size: var(--font-size-year);
     text-align: center;
     font-weight: bolder;
     font-variant: small-caps;
@@ -268,6 +295,6 @@ footer .selectedYear {
 
 footer .selectedYear #selectedYear {
     font-weight: bold;
-    font-size: 460px;
-    opacity: 0.5;
+    font-size: var(--font-size-selectedYear);
+    opacity: 0.2;
 }
