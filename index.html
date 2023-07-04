@@ -73,17 +73,16 @@
         <div class="countries countries-grid-container">
             <div id="karussell">
                 <div class="countries">
-
-                    <div class="country china ">China</div>
+                    <div class="country china active">China</div>
                     <div class="country usa">USA</div>
-                    <div class="country germany active">Germany</div>
+                    <div class="country germany">Germany</div>
                     <div class="country japan">Japan</div>
                     <div class="country global">Global</div>
                 </div>
             </div>
         </div>
         <div class="chart">
-            <canvas id="myChart" ">
+            <canvas id="myChart">
         </div>
 
         <div class=" info ">
@@ -91,11 +90,11 @@
                 <p>Rank: <span id="rank"></span></p>
                 <p>Population: <span id="population"></span></p>
                 <p>CO2-Emissionen: <span id="co2_tonnen"></span> (Ton)</p>
+            </div>
         </div>
-    </div>
-    <div class="selected-year selectedYear " style="display: flex;">
-        <div id="selectedYear">1971</div>
-        <!--
+        <div class="selected-year selectedYear " style="display: flex;">
+            <div id="selectedYear">1971</div>
+            <!--
             <div class="years-container">
                 <input type="range" class="rang-slider" id="range" min="1971" max="2016" value="1971" />
                 <div class="years">
@@ -104,47 +103,47 @@
                 </div>
             </div>
             -->
-    </div>
-    <div class="legends ">
-        <div class="legends-grid-container">
+        </div>
+        <div class="legends ">
+            <div class="legends-grid-container">
 
-            <div class="legend1">
-                <div class="color color-1"></div>
-                <p>energieWirtschaft</p>
-            </div>
-            <div class="legend2">
-                <div class="color color-2"></div>
-                <p>verbrennend</p>
-            </div>
+                <div class="legend1">
+                    <div class="color color-1"></div>
+                    <p>energieWirtschaft</p>
+                </div>
+                <div class="legend2">
+                    <div class="color color-2"></div>
+                    <p>verbrennend</p>
+                </div>
 
 
-            <div class="legend3">
-                <div class="color color-3"></div>
-                <p>transport</p>
-            </div>
-            <div class="legend4">
-                <div class="color color-4"></div>
-                <p>building</p>
-            </div>
+                <div class="legend3">
+                    <div class="color color-3"></div>
+                    <p>transport</p>
+                </div>
+                <div class="legend4">
+                    <div class="color color-4"></div>
+                    <p>building</p>
+                </div>
 
-            <div class="legend5">
-                <div class="color color-5"></div>
-                <p>andereIndustrielleVerbrennung</p>
+                <div class="legend5">
+                    <div class="color color-5"></div>
+                    <p>andereIndustrielleVerbrennung</p>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="footer ">
+        <div class="footer ">
 
-        <div class="years-container">
-            <input type="range" class="rang-slider" id="range" min="1971" max="2016" value="1971" />
-            <div class="years">
-                <div class="year First-year">1971</div>
-                <div class="year last-year">2016</div>
+            <div class="years-container">
+                <input type="range" class="rang-slider" id="range" min="1971" max="2016" value="1971" />
+                <div class="years">
+                    <div class="year First-year">1971</div>
+                    <div class="year last-year">2016</div>
+                </div>
             </div>
+
+
         </div>
-
-
-    </div>
     </div>
     <script src="index.js"></script>
 
