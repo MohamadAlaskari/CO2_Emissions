@@ -3,22 +3,45 @@
 :root {
     /* Variablen */
     /* Colors */
-    --color-background: OldLace;
-    --color-font: #404040;
-    --color-border: #000;
-    --color-gradient-start: rgba(0, 0, 0, 0.4);
+    --color: OldLace;
+    --color2: #f9f7f1;
+    --color: #bdc3c7;
+    --color-background: #dedbcf;
+    --color-primary: #2f2f2f;
+    --color-secondary: #2f2f2f;
+
+    /*color header*/
+    --color-header-title: var(--color-primary);
+    --color-border-earth: var(--color-secondary);
     --color-text-percentage: rgb(215, 40, 40);
-    --color-text: #404040;
-    --color-white: #3a3737;
-    --color-active: rgba(0, 0, 0, 0.677);
-    --color-slider: rgba(0, 0, 0, 0.5);
-    --color-slider-thumb: rgba(0, 0, 0, 1);
+    /*earth*/
+    --color-gradient-start: #555;
+    --circle-fill: #555;
+    /*color countries*/
+    --color-country: var(--color-secondary);
+    --color-country-active: var(--color-primary);
+    /*color info*/
+    --color-info: var(--color-primary);
+    --color-info-specific: var(--color-secondary);
+    /*selected year*/
+    --color-selected-year: var(--color-primary);
+    --color-border-selected-year: var(--color-secondary);
+
+    /*legende*/
     --color-legend-1: rgba(6, 55, 30, 0.7);
     --color-legend-2: rgba(6, 115, 200, 0.7);
     --color-legend-3: rgba(255, 55, 30, 0.7);
     --color-legend-4: rgba(28, 91, 76, 0.7);
     --color-legend-5: rgba(110, 55, 30, 0.7);
-    --color-border-legends: rgba(0, 0, 0, 0.5);
+    --color-border-legends: var(--color-secondary);
+
+
+    /*color range*/
+    --color-slider: var(--color-secondary);
+    --color-slider-thumb: var(--color-primary);
+    /* --color-font: #404040;*/
+    /*--color-white: #3a3737;*/
+
     /* Font sizes */
     --font-size-h1: 40px;
     --font-size-h2: 30px;
@@ -43,6 +66,8 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: var(--font-family1);
+    background-color: var(--color-background);
+
 
 }
 
@@ -68,6 +93,7 @@ h6 {
 
 p {
     margin: 1vmin 0;
+    color: #2f2f2f;
 }
 
 /*
@@ -84,18 +110,18 @@ p {
 
 
 .main-grid-container {
-    padding-top: 5vmin;
-
     display: grid;
-    grid-template-columns: 1fr max-content 1fr;
-    grid-template-rows: max-content max-content 1fr 1fr;
+    grid-template-columns: 4vmin 1fr max-content 1fr 4vmin;
+    grid-template-rows: 4vmin max-content max-content max-content max-content 4vmin;
     gap: 2vmin 1vmin;
     grid-auto-flow: row;
     grid-template-areas:
-        "earth header chart"
-        "earth countries chart"
-        "info selected-year legends"
-        ". footer .";
+        ". . . . ."
+        ". earth header chart. "
+        ". earth countries chart ."
+        ". info selected-year legends ."
+        ". . footer . ."
+        ". . . . .";
 }
 
 
@@ -111,7 +137,12 @@ p {
 }
 
 .header .logo {
+
     scale: 0.7;
+}
+
+.header .title {
+    color: var(--color-header-title);
 }
 
 /*
@@ -128,6 +159,8 @@ p {
 .earth_container {
     width: var(--earth-chart-widthheight);
     height: var(--earth-chart-widthheight);
+    transition: all 2s ease-out;
+
 }
 
 .earth_container::before {
@@ -137,13 +170,31 @@ p {
     height: inherit;
     border-radius: 100%;
     z-index: -1;
+
     background-image: linear-gradient(0deg,
             var(--color-gradient-start) var(--circle-fill),
             transparent var(--circle-fill));
+    transition: all .5s ease-out;
 }
 
+/*
+.earth_container::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-52%, -58%);
+    content: "";
+    width: 40vmin;
+    height: 40vmin;
+    border-radius: 100%;
+    background-color: rgba(47, 47, 47, 0.17);
+    z-index: -1;
+
+    transition: all .5s ease-out;
+}
+*/
 .earth_container #earth {
-    border: 4px solid var(--color-border);
+    border: 4px solid var(--color-border-earth);
     position: relative;
     width: inherit;
     height: inherit;
@@ -205,10 +256,15 @@ p {
     padding: 1vmin;
     cursor: pointer;
     font-size: 4vmin;
-    color: rgba(0, 0, 0, 0.5);
+    color: var(--color-country);
     font-variant: small-caps;
     padding: 5px 0;
     letter-spacing: 10px;
+    transition: all .5s ease-out;
+}
+
+.country:hover {
+
 }
 
 .country.active {
@@ -216,12 +272,9 @@ p {
     font-size: 6vmin;
     opacity: 1;
     transform: rotateY(0deg) translateZ(100px);
-
-    color: rgba(0, 0, 0, 1);
-
-
+   
+    color: var(--color-country-active);
 }
-
 
 
 /*
@@ -263,47 +316,63 @@ p {
         "co2-Emissions";
 }
 
+.info-grid-container p {
+    color: var(--color-info);
+}
+
 .rank {
     grid-area: rank;
+}
+
+#rank {
+    color: var(--color-info-specific);
 }
 
 .population {
     grid-area: population;
 }
 
+#population {
+    color: var(--color-info-specific);
+}
+
 .co2-Emissions {
     grid-area: co2-Emissions;
+}
+
+#co2_tonnen {
+    color: var(--color-info-specific);
 }
 
 /*selected year*/
 
 .selected-year {
     grid-area: selected-year;
-
-    border-left: 4px dashed #bdc3c7;
-    border-right: 4px dashed #bdc3c7;
+    border-left: 4px dashed var(--color-border-selected-year);
+    border-right: 4px dashed var(--color-border-selected-year);
 
 }
 
 .selectedYear {
+
     display: flex;
     justify-content: center;
     align-items: center;
-    /*
-    
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    */
 }
 
 .selectedYear #selectedYear {
     font-weight: bold;
     font-size: var(--font-size-selectedYear);
 
-    opacity: 0.5;
+    color: var(--color-selected-year);
+    /*
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    font-size: 50vmin;
+    opacity: 0.3;*/
 }
 
 /*
@@ -425,14 +494,20 @@ footer
     border-radius: 100%;
     transform: translateY(-5px);
     cursor: pointer;
+    transition: all .3s ease-out;
+
+}
+
+.years-container .rang-slider[type="range"]::-webkit-slider-thumb:hover {
+    scale: 1.3;
 }
 
 .years-container .years {
     display: flex;
     justify-content: space-between;
     margin-top: 7px;
-    width: 101%;
-    transform: translateX(-10px);
+    width: 104%;
+    transform: translateX(-9px);
 }
 
 .years-container .years .year {
