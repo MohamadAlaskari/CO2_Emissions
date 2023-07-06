@@ -111,7 +111,7 @@ p {
 
 .main-grid-container {
     display: grid;
-    grid-template-columns: 4vmin 1fr max-content 1fr 4vmin;
+    grid-template-columns: 4vmin max-content max-content max-content 4vmin;
     grid-template-rows: 4vmin max-content max-content max-content max-content 4vmin;
     gap: 2vmin 1vmin;
     grid-auto-flow: row;
