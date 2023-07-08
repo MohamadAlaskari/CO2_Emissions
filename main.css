@@ -1,5 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Dosis:700);
 
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@700;800&display=swap');
+
 :root {
     /* Variablen */
     /* Colors */
@@ -8,24 +10,25 @@
     --color: #bdc3c7;
     --color-background: #dedbcf;
     --color-primary: #2f2f2f;
-    --color-secondary: #2f2f2f;
+    --color-secondary: rgba(47, 47, 47, 0.7);
 
     /*color header*/
     --color-header-title: var(--color-primary);
-    --color-border-earth: var(--color-secondary);
+    --color-border-earth: var(--color-primary);
     --color-text-percentage: rgb(215, 40, 40);
     /*earth*/
-    --color-gradient-start: #555;
-    --circle-fill: #555;
+    --color-gradient-start: rgba(85, 85, 85, 0.5);
+    --circle-fill: rgb(0, 0, 0);
     /*color countries*/
     --color-country: var(--color-secondary);
     --color-country-active: var(--color-primary);
     /*color info*/
     --color-info: var(--color-primary);
-    --color-info-specific: var(--color-secondary);
+    --color-info-specific: var(--color-primary);
     /*selected year*/
     --color-selected-year: var(--color-primary);
     --color-border-selected-year: var(--color-secondary);
+
 
     /*legende*/
     --color-legend-1: rgba(6, 55, 30, 0.7);
@@ -39,18 +42,21 @@
     /*color range*/
     --color-slider: var(--color-secondary);
     --color-slider-thumb: var(--color-primary);
+    --color-year-limit: var(--color-primary);
     /* --color-font: #404040;*/
     /*--color-white: #3a3737;*/
 
     /* Font sizes */
-    --font-size-h1: 40px;
-    --font-size-h2: 30px;
-    --font-size-h3: 25px;
-    --font-size-h4: 20px;
+
+    --font-size-title: 10vmin;
     --font-size-active: 9vmin;
     --font-size-show: 32px;
-    --font-size-year: 12px;
-    --font-size-selectedYear: 12vmin;
+    /*country*/
+    --font-size-country-active: 9vmin;
+    --font-size-year: 3vmin;
+    --font-size-selectedYear: 10vmin;
+    /*info legende*/
+    --font-size-paragraf: 2.8vmin;
     /*font family*/
     --font-family1: "Dosis", Helvetica, Arial, sans-serif;
 
@@ -67,6 +73,8 @@ body {
     box-sizing: border-box;
     font-family: var(--font-family1);
     background-color: var(--color-background);
+    overflow: hidden;
+
 
 
 }
@@ -94,6 +102,7 @@ h6 {
 p {
     margin: 1vmin 0;
     color: #2f2f2f;
+    font-size: var(--font-size-paragraf);
 }
 
 /*
@@ -111,7 +120,7 @@ p {
 
 .main-grid-container {
     display: grid;
-    grid-template-columns: 4vmin max-content max-content max-content 4vmin;
+    grid-template-columns: 4vmin 1fr max-content 1fr 4vmin;
     grid-template-rows: 4vmin max-content max-content max-content max-content 4vmin;
     gap: 2vmin 1vmin;
     grid-auto-flow: row;
@@ -122,6 +131,8 @@ p {
         ". info selected-year legends ."
         ". . footer . ."
         ". . . . .";
+    width: 100vw;
+    height: 100vh;
 }
 
 
@@ -143,6 +154,9 @@ p {
 
 .header .title {
     color: var(--color-header-title);
+
+    font-size: var(--font-size-title);
+    font-weight: 800;
 }
 
 /*
@@ -174,6 +188,7 @@ p {
     background-image: linear-gradient(0deg,
             var(--color-gradient-start) var(--circle-fill),
             transparent var(--circle-fill));
+    box-shadow: ;
     transition: all .5s ease-out;
 }
 
@@ -237,6 +252,7 @@ p {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    position: relative;
 }
 
 .countries {
@@ -247,10 +263,12 @@ p {
     width: 100%;
     height: 100%;
     perspective: 1200px;
+    padding: 1vmin;
 }
 
+
 .country {
-    opacity: 0.5;
+
     transform: rotateY(0deg) translateZ(0px);
     transition: opacity 0.5s, transform 0.5s;
     padding: 1vmin;
@@ -260,20 +278,18 @@ p {
     font-variant: small-caps;
     padding: 5px 0;
     letter-spacing: 10px;
-    transition: all .5s ease-out;
+    transition: all .3s ease-out;
 }
 
-.country:hover {
-
-}
 
 .country.active {
     padding: 5px;
-    font-size: 6vmin;
+    font-size: var(--font-size-country-active);
     opacity: 1;
     transform: rotateY(0deg) translateZ(100px);
-   
+
     color: var(--color-country-active);
+    font-weight: 700;
 }
 
 
@@ -318,6 +334,7 @@ p {
 
 .info-grid-container p {
     color: var(--color-info);
+
 }
 
 .rank {
@@ -434,8 +451,8 @@ legends
 }
 
 .legends .color {
-    width: 20px;
-    height: 20px;
+    width: 3vmin;
+    height: 3vmin;
     border-radius: 100%;
     border: 2px solid var(--color-border-legends);
 }
@@ -511,6 +528,7 @@ footer
 }
 
 .years-container .years .year {
+    color: var(--color-year-limit);
     font-size: var(--font-size-year);
     text-align: center;
     font-weight: bolder;
