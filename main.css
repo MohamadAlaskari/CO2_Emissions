@@ -53,6 +53,7 @@
     --font-size-show: 32px;
     /*country*/
     --font-size-country-active: 9vmin;
+    --font-size-country-active-mobile: inherit;
     --font-size-year: 3vmin;
     --font-size-selectedYear: 10vmin;
     /*info legende*/
@@ -552,7 +553,7 @@ footer
             ". countries countries ."
             ". earth chart ."
             ". info legends ."
-            ". selected-year selected-year ."
+            ". selected-year . ."
             ". footer footer ."
             ". . . .";
         width: 100vw;
@@ -590,13 +591,12 @@ footer
 
 
     .country.active {
-        padding: 5px;
-        font-size: var(--font-size-country-active);
+    
+        font-size: 4vmin;
         opacity: 1;
-        transform: rotateY(0deg) translateZ(100px);
+        transform: translateY(0px) translateZ(0px);
 
         color: var(--color-country-active);
-        font-weight: 700;
+       
     }
-
 }
