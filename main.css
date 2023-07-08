@@ -56,6 +56,8 @@
     --font-size-country-active-mobile: inherit;
     --font-size-year: 3vmin;
     --font-size-selectedYear: 10vmin;
+    --font-size-selectedYear-mobile: 18vmin;
+
     /*info legende*/
     --font-size-paragraf: 2.7vmin;
     /*font family*/
@@ -189,8 +191,7 @@ p {
     background-image: linear-gradient(0deg,
             var(--color-gradient-start) var(--circle-fill),
             transparent var(--circle-fill));
-    box-shadow: ;
-    transition: all .5s ease-out;
+
 }
 
 /*
@@ -383,14 +384,7 @@ p {
     font-size: var(--font-size-selectedYear);
 
     color: var(--color-selected-year);
-    /*
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    font-size: 50vmin;
-    opacity: 0.3;*/
+
 }
 
 /*
@@ -597,10 +591,24 @@ footer
         color: var(--color-country-active);
 
     }
-
+    .legends-grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 0px 4vmin;
+        grid-template-areas:
+            "legend1 legend2"
+            "legend3 legend4"
+            "legend5 legend5";
+    }
     .selected-year {
         grid-area: selected-year;
         border: none;
 
+    }
+
+    .selectedYear #selectedYear {
+        font-size: var(--font-size-selectedYear-mobile);
+        color: var(--color-selected-year);
     }
 }
