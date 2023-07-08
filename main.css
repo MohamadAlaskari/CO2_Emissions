@@ -537,15 +537,13 @@ footer
 }
 
 @media screen and (max-width:426px) {
-    body {
-        overflow-x: hidden;
-    }
+
 
     .main-grid-container {
         display: grid;
         grid-template-columns: 4vmin max-content max-content 4vmin;
         grid-template-rows: 4vmin max-content max-content max-content max-content max-content max-content 4vmin;
-        gap: 2vmin 1vmin;
+        gap: 1vmin 1vmin;
         grid-auto-flow: row;
         grid-template-areas:
             ". . . ."
@@ -553,7 +551,7 @@ footer
             ". countries countries ."
             ". earth chart ."
             ". info legends ."
-            ". selected-year . ."
+            ". selected-year selected-year ."
             ". footer footer ."
             ". . . .";
         width: 100vw;
@@ -591,12 +589,18 @@ footer
 
 
     .country.active {
-    
+
         font-size: 4vmin;
         opacity: 1;
         transform: translateY(0px) translateZ(0px);
 
         color: var(--color-country-active);
-       
+
+    }
+
+    .selected-year {
+        grid-area: selected-year;
+        border: none;
+
     }
 }
