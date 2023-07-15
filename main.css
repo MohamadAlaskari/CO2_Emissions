@@ -125,8 +125,8 @@ p {
 
 .main-grid-container {
     display: grid;
-    grid-template-columns: 3vmin 1fr max-content 1fr 3vmin;
-    grid-template-rows: 3vmin max-content max-content max-content max-content 3vmin;
+    grid-template-columns: 4vmin 1fr max-content 1fr 4vmin;
+    grid-template-rows: 4vmin max-content max-content max-content max-content 4vmin;
     gap: 2vmin 1vmin;
     grid-auto-flow: row;
     grid-template-areas:
@@ -309,7 +309,7 @@ p {
     padding: 20px;
 }
 
-canvas {
+#myChart {
     width: var(--earth-chart-widthheight);
     height: var(--earth-chart-widthheight);
 }
@@ -536,7 +536,7 @@ footer
 
     .main-grid-container {
         display: grid;
-        grid-template-columns: 3vmin 1fr 1fr 3vmin;
+        grid-template-columns: 0vmin 1fr 1fr 0vmin;
         grid-template-rows: 3vmin max-content max-content max-content max-content max-content max-content 3vmin;
         gap: 1vmin 1vmin;
         grid-auto-flow: row;
