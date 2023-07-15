@@ -530,8 +530,8 @@ footer
     font-weight: bolder;
     font-variant: small-caps;
 }
-
-@media screen and (max-width:376px) {
+/*
+@media screen and (max-width:476px) {
 
 
     .main-grid-container {
@@ -615,10 +615,10 @@ footer
         color: var(--color-selected-year);
     }
 }
+*/
 
 
-
-@media screen and (max-width:426px) {
+@media screen and (max-width:376px) {
 
 
     .main-grid-container {
