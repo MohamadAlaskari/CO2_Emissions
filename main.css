@@ -531,7 +531,7 @@ footer
     font-variant: small-caps;
 }
 
-@media screen and (max-width:426px) {
+@media screen and (max-width:376px) {
 
 
     .main-grid-container {
@@ -618,7 +618,7 @@ footer
 
 
 
-@media screen and (max-width:376px) {
+@media screen and (max-width:426px) {
 
 
     .main-grid-container {
