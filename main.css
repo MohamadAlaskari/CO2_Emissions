@@ -76,6 +76,8 @@ body {
     box-sizing: border-box;
     font-family: var(--font-family1);
     background-color: var(--color-background);
+    width: 100vw;
+    height: 100vh;
 
 
 
@@ -123,8 +125,8 @@ p {
 
 .main-grid-container {
     display: grid;
-    grid-template-columns: 4vmin 1fr max-content 1fr 4vmin;
-    grid-template-rows: 4vmin max-content max-content max-content max-content 4vmin;
+    grid-template-columns: 3vmin 1fr max-content 1fr 3vmin;
+    grid-template-rows: 3vmin max-content max-content max-content max-content 3vmin;
     gap: 2vmin 1vmin;
     grid-auto-flow: row;
     grid-template-areas:
@@ -307,10 +309,9 @@ p {
     padding: 20px;
 }
 
-.chart #myChart {
+canvas {
     width: var(--earth-chart-widthheight);
     height: var(--earth-chart-widthheight);
-
 }
 
 /*
@@ -535,8 +536,8 @@ footer
 
     .main-grid-container {
         display: grid;
-        grid-template-columns: 4vmin max-content max-content 4vmin;
-        grid-template-rows: 4vmin max-content max-content max-content max-content max-content max-content 4vmin;
+        grid-template-columns: 3vmin 1fr 1fr 3vmin;
+        grid-template-rows: 3vmin max-content max-content max-content max-content max-content max-content 3vmin;
         gap: 1vmin 1vmin;
         grid-auto-flow: row;
         grid-template-areas:
@@ -591,6 +592,7 @@ footer
         color: var(--color-country-active);
 
     }
+
     .legends-grid-container {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -601,6 +603,97 @@ footer
             "legend3 legend4"
             "legend5 legend5";
     }
+
+    .selected-year {
+        grid-area: selected-year;
+        border: none;
+
+    }
+
+    .selectedYear #selectedYear {
+        font-size: var(--font-size-selectedYear-mobile);
+        color: var(--color-selected-year);
+    }
+}
+
+
+
+@media screen and (max-width:376px) {
+
+
+    .main-grid-container {
+        display: grid;
+        grid-template-columns: 2vmin 1fr 2vmin;
+        grid-template-rows: 2vmin max-content max-content max-content max-content max-content max-content max-content max-content 2vmin;
+        gap: 1vmin 1vmin;
+        grid-auto-flow: row;
+        grid-template-areas:
+            ". . ."
+            ". header ."
+            ". countries ."
+            ". earth ."
+            ". info ."
+            ". chart ."
+            ". legends ."
+            ". selected-year ."
+            ". footer ."
+            ". . .";
+
+        width: 100vw;
+        height: 100vh;
+
+    }
+
+    .countries-grid-container {
+        flex-direction: row;
+    }
+
+    .countries {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        padding: 1vmin;
+    }
+
+    .country {
+
+        transform: rotateY(0deg) translateZ(0px);
+        transition: opacity 0.5s, transform 0.5s;
+        padding: 1vmin;
+        cursor: pointer;
+        font-size: 4vmin;
+        color: var(--color-country);
+        font-variant: small-caps;
+        padding: 5px 0;
+        letter-spacing: 5px;
+        transition: all .3s ease-out;
+    }
+
+
+    .country.active {
+
+        font-size: 4vmin;
+        opacity: 1;
+        transform: translateY(0px) translateZ(0px);
+
+        color: var(--color-country-active);
+
+    }
+
+    .legends-grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 0px 4vmin;
+        grid-template-areas:
+            "legend1 legend2"
+            "legend3 legend4"
+            "legend5 legend5";
+    }
+
     .selected-year {
         grid-area: selected-year;
         border: none;
