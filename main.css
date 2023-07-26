@@ -62,6 +62,8 @@
 
     /*info legende*/
     --font-size-paragraf: 2.7vmin;
+    --font-size-paragraf-md: 2vmin;
+
     /*font family*/
     --font-family1: "Dosis", Helvetica, Arial, sans-serif;
 
@@ -557,6 +559,11 @@ footer
 
         font-size: var(--font-size-title-md);
         font-weight: 800;
+    }
+    p {
+        margin: 1vmin 0;
+        color: #2f2f2f;
+        font-size: var(--font-size-paragraf-md);
     }
 
     .earth_container {
