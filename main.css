@@ -533,11 +533,32 @@ footer
 }
 
 
-@media screen and (max-width:769px) {
-
+@media screen and (min-width:876px) {
+    .earth_container {
+        width: var(--earth-chart-widthheight);
+        height: var(--earth-chart-widthheight);
+        transition: all 2s ease-out;
+    
+    }
+    .chart-container {
+        width: var(--earth-chart-widthheight);
+        height: var(--earth-chart-widthheight);
+    }
+}
+@media screen and (min-width:676px) {
+    .earth_container {
+        width: var(--earth-chart-widthheight-sm);
+        height: var(--earth-chart-widthheight-sm);
+        transition: all 2s ease-out;
+    
+    }
+    .chart-container {
+        width: var(--earth-chart-widthheight-sm);
+        height: var(--earth-chart-widthheight-sm);
+    }
 }
 
-@media screen and (max-width:576px) {
+@media screen and (max-width:676px) {
 
 
     .main-grid-container {
