@@ -69,8 +69,8 @@
 
     /*earth chart*/
     --earth-chart-widthheight: 55vmin;
-    --earth-chart-widthheight-sm: 45vmin;
     --earth-chart-widthheight-md: 46vmin;
+    --earth-chart-widthheight-sm: 45vmin;
 
 
 
@@ -539,7 +539,13 @@ footer
 }
 
 
-@media screen and (min-width:976px) {
+@media screen and (min-width:960px) {
+    .header .title {
+        color: var(--color-header-title);
+
+        font-size: var(--font-size-title);
+        font-weight: 800;
+    }
     .earth_container {
         width: var(--earth-chart-widthheight);
         height: var(--earth-chart-widthheight);
@@ -550,6 +556,11 @@ footer
     .chart-container {
         width: var(--earth-chart-widthheight);
         height: var(--earth-chart-widthheight);
+    }
+    p {
+        margin: 1vmin 0;
+        color: #2f2f2f;
+        font-size: var(--font-size-paragraf);
     }
 }
 
