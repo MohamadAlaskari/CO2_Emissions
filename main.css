@@ -68,7 +68,7 @@
     --font-family1: "Dosis", Helvetica, Arial, sans-serif;
 
     /*earth chart*/
-    --earth-chart-widthheight: 55vmin;
+    --earth-chart-widthheight: 60vmin;
     --earth-chart-widthheight-md: 44vmin;
     --earth-chart-widthheight-sm: 45vmin;
 
@@ -567,7 +567,7 @@ footer
 }
 
 
-@media screen and (min-width:950px) {
+@media screen and (min-width:1024px) {
     .header .title {
         color: var(--color-header-title);
 
