@@ -309,7 +309,7 @@ p {
     padding: 20px;
 }
 
-#myChart {
+.chart-container {
     width: var(--earth-chart-widthheight);
     height: var(--earth-chart-widthheight);
 }
@@ -530,8 +530,8 @@ footer
     font-weight: bolder;
     font-variant: small-caps;
 }
-/*
-@media screen and (max-width:476px) {
+
+@media screen and (max-width:600px) {
 
 
     .main-grid-container {
@@ -615,7 +615,7 @@ footer
         color: var(--color-selected-year);
     }
 }
-*/
+
 
 
 @media screen and (max-width:576px) {
