@@ -533,7 +533,7 @@ footer
 }
 
 
-@media screen and (min-width:876px) {
+@media screen and (min-width:976px) {
     .earth_container {
         width: var(--earth-chart-widthheight);
         height: var(--earth-chart-widthheight);
@@ -545,7 +545,7 @@ footer
         height: var(--earth-chart-widthheight);
     }
 }
-@media screen and (min-width:676px) {
+@media screen and (min-width:876px) {
     .earth_container {
         width: var(--earth-chart-widthheight-sm);
         height: var(--earth-chart-widthheight-sm);
@@ -558,7 +558,7 @@ footer
     }
 }
 
-@media screen and (max-width:676px) {
+@media screen and (max-width:776px) {
 
 
     .main-grid-container {
