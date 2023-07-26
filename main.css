@@ -66,6 +66,8 @@
     /*earth chart*/
     --earth-chart-widthheight: 55vmin;
     --earth-chart-widthheight-sm: 48vmin;
+    --earth-chart-widthheight-md: 40vmin;
+
 
 
     /* Other Variables */
@@ -547,14 +549,14 @@ footer
 }
 @media screen and (min-width:876px) {
     .earth_container {
-        width: var(--earth-chart-widthheight-sm);
-        height: var(--earth-chart-widthheight-sm);
+        width: var(--earth-chart-widthheight-md);
+        height: var(--earth-chart-widthheight-md);
         transition: all 2s ease-out;
     
     }
     .chart-container {
-        width: var(--earth-chart-widthheight-sm);
-        height: var(--earth-chart-widthheight-sm);
+        width: var(--earth-chart-widthheight-md);
+        height: var(--earth-chart-widthheight-md);
     }
 }
 
