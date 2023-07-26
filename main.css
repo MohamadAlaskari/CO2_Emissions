@@ -49,6 +49,8 @@
     /* Font sizes */
 
     --font-size-title: 10vmin;
+    --font-size-title-md: 8vmin;
+
     --font-size-active: 9vmin;
     --font-size-show: 32px;
     /*country*/
@@ -56,7 +58,7 @@
     --font-size-country-active-mobile: inherit;
     --font-size-year: 3vmin;
     --font-size-selectedYear: 10vmin;
-    --font-size-selectedYear-mobile: 14vmin;
+    --font-size-selectedYear-mobile: 16vmin;
 
     /*info legende*/
     --font-size-paragraf: 2.7vmin;
@@ -540,27 +542,37 @@ footer
         width: var(--earth-chart-widthheight);
         height: var(--earth-chart-widthheight);
         transition: all 2s ease-out;
-    
+
     }
+
     .chart-container {
         width: var(--earth-chart-widthheight);
         height: var(--earth-chart-widthheight);
     }
 }
+
 @media screen and (min-width:876px) {
+    .header .title {
+        color: var(--color-header-title);
+
+        font-size: var(--font-size-title-md);
+        font-weight: 800;
+    }
+
     .earth_container {
         width: var(--earth-chart-widthheight-md);
         height: var(--earth-chart-widthheight-md);
         transition: all 2s ease-out;
-    
+
     }
+
     .chart-container {
         width: var(--earth-chart-widthheight-md);
         height: var(--earth-chart-widthheight-md);
     }
 }
 
-@media screen and (max-width:776px) {
+@media screen and (max-width:875px) {
 
 
     .main-grid-container {
@@ -587,12 +599,14 @@ footer
         width: var(--earth-chart-widthheight-sm);
         height: var(--earth-chart-widthheight-sm);
         transition: all 2s ease-out;
-    
+
     }
+
     .chart-container {
         width: var(--earth-chart-widthheight-sm);
         height: var(--earth-chart-widthheight-sm);
     }
+
     .countries-grid-container {
         flex-direction: row;
     }
