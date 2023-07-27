@@ -68,6 +68,7 @@
     --font-family1: "Dosis", Helvetica, Arial, sans-serif;
 
     /*earth chart*/
+    --earth-chart-widthheight-xl:65vmin;
     --earth-chart-widthheight: 60vmin;
     --earth-chart-widthheight-md: 44vmin;
     --earth-chart-widthheight-sm: 45vmin;
@@ -186,7 +187,6 @@ p {
 .earth_container {
     width: var(--earth-chart-widthheight);
     height: var(--earth-chart-widthheight);
-    transition: all 2s ease-out;
 
 }
 
@@ -562,7 +562,6 @@ footer
     .earth_container {
         width: var(--earth-chart-widthheight-sm);
         height: var(--earth-chart-widthheight-sm);
-        transition: all 2s ease-out;
 
     }
 
@@ -650,7 +649,6 @@ footer
     .earth_container {
         width: var(--earth-chart-widthheight-md);
         height: var(--earth-chart-widthheight-md);
-        transition: all 2s ease-out;
 
     }
 
@@ -671,7 +669,6 @@ footer
     .earth_container {
         width: var(--earth-chart-widthheight);
         height: var(--earth-chart-widthheight);
-        transition: all 2s ease-out;
 
     }
 
@@ -684,5 +681,25 @@ footer
         margin: 1vmin 0;
         color: #2f2f2f;
         font-size: var(--font-size-paragraf);
+    }
+}
+
+@media screen and (min-width:1200px) {
+
+    .earth_container {
+        width: var(--earth-chart-widthheight-xl);
+        height: var(--earth-chart-widthheight-xl);
+
+    }
+
+    .chart-container {
+        width: var(--earth-chart-widthheight-xl);
+        height: var(--earth-chart-widthheight-xl);
+    }
+
+    p {
+        margin: 1vmin 0;
+        color: #2f2f2f;
+        font-size: var(--font-size-paragraf-xl);
     }
 }
