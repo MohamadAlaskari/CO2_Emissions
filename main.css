@@ -538,62 +538,6 @@ footer
     font-variant: small-caps;
 }
 
-
-
-@media screen and (min-width:876px) {
-    .header .title {
-        color: var(--color-header-title);
-
-        font-size: var(--font-size-title-md);
-        font-weight: 800;
-    }
-    p {
-        margin: 1vmin 0;
-        color: #2f2f2f;
-        font-size: var(--font-size-paragraf-md);
-    }
-
-    .earth_container {
-        width: var(--earth-chart-widthheight-md);
-        height: var(--earth-chart-widthheight-md);
-        transition: all 2s ease-out;
-
-    }
-
-    .chart-container {
-        width: var(--earth-chart-widthheight-md);
-        height: var(--earth-chart-widthheight-md);
-    }
-}
-
-
-@media screen and (min-width:1024px) {
-    .header .title {
-        color: var(--color-header-title);
-
-        font-size: var(--font-size-title);
-        font-weight: 800;
-    }
-    .earth_container {
-        width: var(--earth-chart-widthheight);
-        height: var(--earth-chart-widthheight);
-        transition: all 2s ease-out;
-
-    }
-
-    .chart-container {
-        width: var(--earth-chart-widthheight);
-        height: var(--earth-chart-widthheight);
-    }
-
-    p {
-        margin: 1vmin 0;
-        color: #2f2f2f;
-        font-size: var(--font-size-paragraf);
-    }
-}
-
-
 @media screen and (max-width:875px) {
     .main-grid-container {
         display: grid;
@@ -686,5 +630,59 @@ footer
     .selectedYear #selectedYear {
         font-size: var(--font-size-selectedYear-mobile);
         color: var(--color-selected-year);
+    }
+}
+
+@media screen and (min-width:876px) {
+    .header .title {
+        color: var(--color-header-title);
+
+        font-size: var(--font-size-title-md);
+        font-weight: 800;
+    }
+
+    p {
+        margin: 1vmin 0;
+        color: #2f2f2f;
+        font-size: var(--font-size-paragraf-md);
+    }
+
+    .earth_container {
+        width: var(--earth-chart-widthheight-md);
+        height: var(--earth-chart-widthheight-md);
+        transition: all 2s ease-out;
+
+    }
+
+    .chart-container {
+        width: var(--earth-chart-widthheight-md);
+        height: var(--earth-chart-widthheight-md);
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .header .title {
+        color: var(--color-header-title);
+
+        font-size: var(--font-size-title);
+        font-weight: 800;
+    }
+
+    .earth_container {
+        width: var(--earth-chart-widthheight);
+        height: var(--earth-chart-widthheight);
+        transition: all 2s ease-out;
+
+    }
+
+    .chart-container {
+        width: var(--earth-chart-widthheight);
+        height: var(--earth-chart-widthheight);
+    }
+
+    p {
+        margin: 1vmin 0;
+        color: #2f2f2f;
+        font-size: var(--font-size-paragraf);
     }
 }
