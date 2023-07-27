@@ -68,10 +68,10 @@
     --font-family1: "Dosis", Helvetica, Arial, sans-serif;
 
     /*earth chart*/
-    --earth-chart-widthheight-xl:65vmin;
-    --earth-chart-widthheight: 60vmin;
-    --earth-chart-widthheight-md: 44vmin;
-    --earth-chart-widthheight-sm: 45vmin;
+    --earth-chart-widthheight-xl: 24vw;
+    --earth-chart-widthheight: 30vw;
+    --earth-chart-widthheight-md: 26vw;
+    --earth-chart-widthheight-sm: 40vw;
 
 
 
@@ -184,11 +184,7 @@ p {
 }
 
 
-.earth_container {
-    width: var(--earth-chart-widthheight);
-    height: var(--earth-chart-widthheight);
-
-}
+.earth_container {}
 
 .earth_container::before {
     position: absolute;
@@ -316,10 +312,7 @@ p {
     align-items: center;
 }
 
-.chart-container {
-    width: var(--earth-chart-widthheight);
-    height: var(--earth-chart-widthheight);
-}
+.chart-container {}
 
 /*
  infos
